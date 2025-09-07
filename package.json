@@ -1,0 +1,15 @@
+{
+  "name": "brane-app",
+  "version": "1.0.0",
+  "description": "BRANE AI Data Intelligence Platform",
+  "scripts": {
+    "start:frontend": "cd frontend && npm start",
+    "dev:frontend": "cd frontend && npm run dev", 
+    "install:frontend": "cd frontend && npm install",
+    "start": "npm run start:frontend",
+    "dev": "npm run dev:frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
