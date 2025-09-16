@@ -67,7 +67,6 @@ const RequestForm = ({ setShowRequestForm }) => {
           </button>
         </div>
 
-        {/* Status Messages */}
         {submitStatus === 'success' && (
           <div className="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg flex items-center space-x-3">
             <CheckCircle className="w-5 h-5 text-green-400" />
