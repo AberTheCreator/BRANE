@@ -3,13 +3,31 @@
   "version": "1.0.0",
   "description": "BRANE AI Data Intelligence Platform",
   "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm start",
-    "dev:frontend": "cd frontend && npm run dev", 
-    "install:frontend": "cd frontend && npm install",
-    "start": "npm run start:frontend",
-    "dev": "npm run dev:frontend"
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start": "npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "test:frontend": "cd frontend && npm test",
+    "setup": "npm run install:all && echo 'Setup complete! Run: npm run dev'",
+    "clean": "rm -rf node_modules backend/node_modules frontend/node_modules frontend/build",
+    "health": "curl -s http://localhost:5000/health || echo 'Backend not running'"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
-  }
-}
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "ai",
+    "data-intelligence",
+    "analytics",
+    "chatbot",
+    "causal-inference"
+  ],
+  "author": "ABER"
